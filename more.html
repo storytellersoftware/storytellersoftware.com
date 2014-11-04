@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Storyteller</title>
+
+	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="css/storyteller.css" />
+	
+	<script src="js/jquery-1.7.1.min.js"></script>
+	<script src="js/jquery.fitvids.js"></script>
+	<script src="js/storyteller.js"></script>
+
+
+</head>
+<body id="more">
+	<div class="container">
+		<header>
+			<a href="index.html"><h1>Story<span>teller</span></h1></a>
+			
+			<nav>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="more.html">More Information</a></li>
+					<li><a href="download.html">Download</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<article>
+			<h2>Storyteller</h2>
+
+			<p>
+				Traditional version control systems like CVS, Subversion, Git, and Mercurial store snapshots at commit points. Storyteller is different. Storyteller records almost all developer actions as they're made, stores them in a database, and has the ability to replay them at any time. There are powerful filters to limit the amount of information that gets played back.
+			</p>
+
+			<p>
+				More importantly, Storyteller lets developers create narratives about the playbacks. These narratives make up the stories about your system. Not every developer interaction warrants a story, only the interesting parts do. The stories are easy to create and are organized and searchable by the development team. Working on an existing piece of code that is new to you? Just highlight the code and see what stories were created about that code. 
+			</p>
+	
+			<p>
+				 Developers need to learn how their systems evolve and how to become better programmers.
+			</p>
+
+			<figure class="flyright">
+				<img src="img/marsRover.jpg" />
+
+				<figcaption>
+					The Mars Rover
+				</figcaption>
+			</figure>
+			
+			<p>
+				How does one debug code that hasn't been looked at in years? All of the important context information that was in the developers' heads surely fades over the time it takes a NASA mission to reach Mars. This historical information is important when adding new features or fixing a bug. 
+			</p>
+
+			<p>
+				Of course, this problem is not unique to NASA missions. At most companies priorities shift, people shift, and it might be years before the development team is asked to revisit some code. In addition, new hires and transfers to active projects need to get that context information in their heads in order to be effective.
+			</p>
+
+			<p>
+				Version control systems (VCS) store snapshots of our documents over time. So, if one wants to recapture that context one can use VCS, right?
+			</p>
+
+
+			<h2>The Moving Picture Metaphor</h2>
+
+			<p>
+				The time in between VCS snapshots is too long to animate changes. The tools used to view the differences between snapshots make it hard to see how the code has evolved. 
+			</p>
+
+			<figure class="flyright">
+				<img src="img/ali.jpg" />
+				<figcaption>
+					<p>
+						1965 Heavyweight Championship Fight. Sonny Liston (the gentleman on 
+						the floor) proceeded to get up! This was a 1st round TKO. The 
+						picture makes it seem like there was a long protracted battle. It 
+						was a rather uneventful fight, but an incredible picture. 
+					</p>
+
+					<p>
+						This one still picture does not tell the 
+						<a href="http://www.youtube.com/watch?v=uzWynvBLJ4I#t=2m06s">whole story</a>.
+					</p> 
+				</figcaption>
+			</figure>
+			
+			<ul class="biglist">
+				<li>
+					<h3>diff</h3>
+					<p>
+						With a diff tool one can see the differences between two sets of files, but this is hardly animated. What if one wanted to see the differences between three sets of code, or four? The exact details of how version one became version two do not make it into the VCS. 
+					</p>
+				</li>
+				<li>
+					<h3>logs</h3>
+					<p>
+						On check in, developers write a commit message to the log. These logs could help animate the changes if developers wrote good messages. Unfortunately, they do not. It is too hard to write a good description of all the changes that take place from one commit to another. 
+					</p>
+					<p>
+						The changes that developers make to code are typically not linear, instead they touch many different pieces of code in many different files. Remembering and describing why they made the changes in a commit message would be almost as hard as writing the code itself. A new form of program documentation is needed to easily describe <em>why</em> developers do the things they do.
+					</p>
+				</li>
+				<li>
+					<h3>code comments, documents, and other forms of documentation</h3>
+					<p>
+						Most developers have an aversion to writing documentation. When 
+						they are required to do it they often don't put in the effort 
+						needed to create an easily readable document. 
+					</p>
+					<p>
+						It is a little bit easier to get developers to write code 
+						comments. Because developers love to write code and code comments 
+						are intimately linked to it, there is a great opportunity to store 
+						some kind of historical context here.
+					</p>
+					<p>
+						The problem is that it is hard to write a meaningful comment that 
+						is relevant in all contexts. For example, if a developer was 
+						changing the name of a variable from x to y, one could write a 
+						comment about why that change was needed. However, that comment is 
+						really only relevant to people who knew the old name and are 
+						interested in why the old name changed. Most people won't be 
+						interested in that comment so it is difficult to justify adding it 
+						to the code comments. This kind of information will stay in 
+						individual developer's heads for a little while but isn't likely 
+						to be stored anywhere else.
+					</p>
+				</li>
+			</ul>
+			
+			<p>
+				Moving pictures do a better job of telling a story than still 
+				pictures. Traditional VCS's don't store enough information and 
+				meta-information to animate the changes in a repository. If the code 
+				hasn't been looked at in a while, or there are new people joining the 
+				development team, a well documented and narrated animation can provide 
+				insight that would otherwise stay in only a few peoples heads and 
+				eventually escape into the ether.
+			</p>
+
+
+			<h2>How can we learn to become better craftsmen without being able to 
+			see how talented developers write code?</h2>
+		
+			<p>
+				Right now, working on a computer is a solitary activity. Because of 
+				this, we can only reflect on our own experiences. Its difficult to get 
+				inspiration from others. We intend to change the way people learn at 
+				all stages of their careers by opening up for examination how people 
+				do their work.
+			</p>
+			
+			<p>
+				Some people consider developing software a craft. Craftsmen learn by 
+				watching and working with more experienced craftsmen. However, we seem 
+				to go out of our way to hide how we do our work.
+			</p>
+
+			<p>
+				Because of a lack of animating tools it is hard to <em>see</em> how 
+				code has evolved. Labeled commits indicate the important milestones, 
+				but what about all the work that it took to get to that point? What 
+				can be learned from <em>watching</em> people go down a dead path? We 
+				believe there is a lot to learn from <em>seeing</em> this data in an 
+				animated playback. 
+			</p>
+
+			<p>
+				The software development community is in need of tools that open up 
+				the development process to encourage learning by team members. It 
+				seems like we actively discourage openness and want people to believe 
+				we don't struggle to get to a final solution- we have to let go of 
+				this ego boosting fallacy. Even great developers struggle to come up 
+				with solutions to hard problems.
+			</p>
+
+			<ul>
+				<li>
+					It is critically important to see how people leverage good decisions 
+					and extend their position from them.
+				</li>	
+				<li>
+					It is critically important to see how people recover from bad 
+					decisions.
+				</li>
+				<li>
+					It is critically important that we get feedback from 'masters' about 
+					why they are making decisions
+				</li>
+			</ul>
+			
+			<p>
+				When learning to play chess it is one thing to watch someone play 
+				chess as an outsider, it is considerably more valuable for that player 
+				to tell you why he is doing what he is doing, "In three moves this is 
+				going to pay off because I am going to be able to take your knight". 
+				This is exactly the kind of information that doesn't get recorded 
+				anywhere while writing code. This insight is extremely difficult to 
+				get other than learning the hard way. There should be an easier way to 
+				learn this.
+			</p>
+
+			<p>
+				It is also critically important that the craftsmen who make these 
+				decisions can comment about their work. They have to be able to tell 
+				stories. This is why people become apprentices- to watch, to hear 
+				stories, to discuss, and to get feedback from masters.
+			</p>
+			
+			<p>
+				Questions? Comments? Suggestions? <a href='mailto:mark@cooperconrad.com?subject=[Storyteller]'>Contact Us</a> for more information.
+			</p>
+		</article>
+
+	</div>
+	<footer>
+		<div class="container">
+			<div id="cooperconrad">
+				<h2><a href="http://cooperconrad.com">Cooper Conrad<br /><span>Software Engineering</span></a></h2>
+			</div>
+		</div>
+	</footer>
+
+</body>
+</html>

@@ -1,0 +1,512 @@
+// variables
+$background: #ecead9; // mist
+$darkbrown:  #78684e; // octane
+$highlights: #dddabe; // stone
+
+
+$darkgreen:  #77c262; // flyl(eft)
+$lightgreen: #56924c; // flyr(ight)
+
+$text: darken($darkbrown, 15%);
+
+$fontsize:    20px;
+$borderSize:  5px;
+
+//$serif:   Bitter, "Droid Serif", Georgia, serif;
+//$sans:    Roboto, "Open Sans", "Droid Sans", Helvetica, Arial, sans-serif;
+
+$title: Bitter, sans-serif;
+$body: Lato, serif;
+$mono: "Source Code Pro", "Cousine", monospace;
+
+
+// mixins
+@mixin iebox {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@import 'http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,700italic|Merriweather:400,700,400italic,700italic|Source+Code+Pro:400,700|Source+Sans+Pro:900,700,400|Bitter:400,400italic,700';
+
+
+body {
+  font-family: $body;
+
+  background: $background;
+  color: $text;
+  font-size: $fontsize;
+  line-height: 1.5em;
+
+  font-weight: 400;
+}
+
+p {
+  margin: 0 auto;
+  padding-bottom: 1em;
+  width: 70%;
+
+  //text-align: justify;
+}
+
+ol, ul { 
+  @include iebox;
+  width: 70%; 
+  margin: 0 auto; 
+  padding: 0 0 0 2em;
+}
+li {
+  padding-bottom: 1em;
+  text-align: justify;
+
+  p: last-child { padding-bottom: 0; }
+}
+
+a {
+  color: darken($darkbrown, 0%);
+  //font-weight: bold;
+  text-decoration: none;
+  border-bottom: 1px solid $darkbrown;
+
+  &:hover {
+    color: darken($darkbrown, 5%);
+    border-bottom: 2px solid darken($darkbrown, 5%);
+  }
+  &:active {
+    color: darken($darkbrown, 10%);
+    border-bottom: 3px solid darken($darkbrown, 10%);
+  }
+
+  &.note {
+    font-size: .5em;
+    vertical-align: super;
+  }
+}
+
+h1, h2, h3 {
+  font-family: $title;
+  line-height: 1.5em;
+
+  font-weight: 400;
+}
+h1, h2 {
+  clear: both;
+}
+
+section { width: 100%; display: table; }
+
+img { max-width: 100%;}
+
+figure {
+  figcaption {
+    font-size: .8em;
+    line-height: 1.75em;
+    padding-top: 20px;
+  }
+}
+
+iframe {
+  border: 0;
+}
+
+.container {
+  @include iebox;
+
+  width: 100%;
+  max-width: 1300px;
+  padding: 0 50px;
+
+  margin: 0 auto;
+}
+
+.large { width: 70%; }
+.small { width: 30%; }
+.half  { width: 50%; }
+
+.large, .small, .half {
+  @include iebox;
+}
+
+.left  { float: left;  padding-right: 20px; }
+.right { float: right; padding-left: 20px;  }
+
+.flyright, .flyleft {
+  width: 30%;
+  text-align: center;
+
+  background: lighten($highlights, 5%);
+  //padding-bottom: 40px;
+
+  padding: 20px;
+  margin: 20px;
+
+  p {
+    width: 100%;
+
+    &:last-child { padding: 0; }
+  }
+}
+
+.flyright { float: right; margin-right: -20px; }
+.flyleft { float: left; margin-left: -20px; }
+
+
+// NEW stuffs
+h2 {
+  border-top: 3px solid $highlights;
+  border-bottom: 3px solid $highlights;
+
+  text-align: center;
+  padding: 20px 0;
+}
+
+
+header {
+  margin-bottom: 5em;
+
+  h1 {
+    //border-top: 2px solid $highlights;
+    border-bottom: $borderSize solid $highlights;
+    border-top: $borderSize solid $highlights;
+    font-family: $title;
+
+    margin: 20px 0 0;
+    padding: 100px 0 25px;
+    text-align: center;
+
+    //text-align: right;
+    //text-transform: uppercase;
+
+    font-weight: 400;
+    font-size: 3em;
+
+    color: darken($lightgreen, 30%);
+
+    span {
+      color: darken($darkgreen, 30%);
+      font-weight: 800;
+    }
+
+    background-position: 40px 35%;
+    background-image: url(../img/light-butterfly.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+
+  nav {
+    z-index: 2;
+    margin-top: 0 - $borderSize;
+
+    background: $darkbrown;
+    float: right;
+    border-radius: 0 0 5px 5px;
+    display: table;
+
+    font-family: $body;
+
+    ul {
+      padding: 0 10px;
+      margin: 0;
+      width: 100%;
+
+      li {
+        display: inline-block;
+        padding: 10px;
+
+        a {
+          color: $highlights;
+          font-weight: 700;
+
+          &:hover {
+            color: lighten($highlights, 10%);
+            border-bottom: 0px;
+          }
+          &:active {
+            color: lighten($highlights, 5%);
+            border-bottom: 0px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.hero {
+  /*
+  background-position: 0% 25%;
+  background-image: url(../img/butterfly.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  */
+  padding: 0 0;
+
+  //width: 100%;
+  //padding: 10% 5% 10%;
+  //margin-left: -5%;
+
+  //border-bottom: $borderSize solid $highlights;
+
+  .video {
+    width: 100%;
+    margin: 0 auto 0;
+  }
+
+  h2 { 
+    .story { color: darken($lightgreen, 10%); font-weight: 400; }
+    .teller { color: darken($darkgreen, 10%); }
+  }
+
+  p {
+    //width: 70%;
+    //text-align: justify;
+    //margin: 0 auto;
+  }
+  
+}
+
+h1 {
+  font-size: 2.5em;
+  font-weight: 300;
+  text-align: center;
+}
+h2 {
+  font-size: 2em;
+}
+h4, h5, h6, strong, b { font-weight: 600; }
+
+.more {
+  @include iebox;
+
+  display: block;
+  padding: 25px;
+  width: 70%;
+  
+  font-size: 1.5em;
+  //font-weight: normal;
+  font-family: $body;
+  text-align: center;
+
+  background: $darkbrown;
+  color: $highlights;
+
+  margin: 2em auto 0;
+
+  border: 0;
+
+  &:hover {
+    background: lighten($darkbrown, 7%);
+    color: lighten($highlights, 7%);
+    border: 0;
+  }
+  &:active {
+    background: lighten($darkbrown, 14%);
+    color: lighten($highlights,14%);
+    border: 0;
+  }
+}
+
+.biglist {
+  list-style: none;
+  background: lighten($highlights, 10%);
+  padding: 0 2em 0 0;
+
+  width: 70%;
+  margin: 0 auto 1em;
+
+  li {
+    display: block;
+    padding: 0;
+
+    h3 {
+      border-left: $borderSize solid darken($highlights, 10%);
+      margin: 0;
+      padding: 1em 0 1em 2em;
+    }
+    p {
+      @include iebox;
+      width: 100%;
+      padding-left: 2em;
+      border-left: $borderSize solid $highlights;
+
+      &:last-child { padding-bottom: 1em; }
+    }
+  }
+}
+
+footer {
+  background-color: $highlights;
+  padding: 50px 0;
+  margin: 50px 0 0;
+
+  #cooperconrad {
+    h2, h2 a, h2 a:hover, h2 a:active {
+      padding: 0;
+      margin: 0;
+      font-family: "PT Serif Caption", serif;
+      font-weight: normal;
+      text-align: center;
+      color: $darkbrown;
+      text-decoration: none;
+
+      text-shadow: $background 1px 1px 1px;
+      border-bottom: 0px;
+
+      span {
+        font-style: italic;
+        font-size: .5em;
+        margin-top: -1.2em;
+        display: block;
+      }
+    }
+  }
+}
+
+#home {
+  .hero {
+    padding-bottom: 0px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .left, .right {float: none; padding: 0px;}
+  .large, .small, .half {width: 100%;}
+  figure { text-align: center; margin: 2em 0;}
+
+  .container {
+    padding: 5%;
+  }
+
+  header { 
+    h1 { 
+      background-position: 0 30%;
+      text-align: center;
+      padding-right: 0;
+      padding-top: 50px;
+    }
+
+    nav {
+      float: none;
+      width: 100%;
+      margin-top: 0px;
+      //margin: 0 auto;
+      ul {
+        margin: 0 auto;
+        padding: 0;
+        display: table;
+        width: auto;
+      }
+    }
+  }
+
+  .hero {
+    padding: 0;
+    margin: 50px 0 0;
+    background: none;
+
+    .video {
+      width: 100%;
+    }
+  }
+
+  ul, ol, p, .biglist, .more { width: 100%; }
+  .flyleft { margin-left: 0; }
+  .flyright { margin-right: 0; }
+}
+
+@media (max-width: 500px) {
+  header {
+    margin-bottom: 0em;
+
+    h1 {
+      font-size: 2.5em;
+      padding-top: 25px;
+      padding-bottom: 15px;
+    }
+
+    nav {
+      border-radius: 0px;
+
+      ul { 
+        display: block;
+        padding: 0 10px;
+
+        li {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .hero, article {
+    margin-top: 0;
+
+    h2:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2)      ,
+only screen and (   min--moz-device-pixel-ratio: 2)      ,
+only screen and (     -o-min-device-pixel-ratio: 2/1)    ,
+only screen and (        min-device-pixel-ratio: 2)      ,
+only screen and (                min-resolution: 192dpi) ,
+only screen and (                min-resolution: 2dppx)   {
+
+  @media (max-width: 1020px) {
+    ul, ol, p, .biglist, .more { width: 100%; }
+    .flyleft { margin-left: 0; }
+    .flyright { margin-right: 0; }
+
+    body { font-size: 1.75 * $fontsize;}
+
+    .left, .right {float: none; padding: 0px;}
+    .large, .small, .half {width: 100%;}
+    figure { text-align: center; margin: 2em 0;}
+    
+    .container {
+      padding: 5%;
+    }
+
+    header {
+      h1 {
+        border-bottom-width: $borderSize * 2.5;
+        background-position: 0 35%;
+        padding-right: 0;
+      }
+      nav {
+        float: none;
+        width: 100%;
+        margin-top: 0px;
+
+        ul {
+          padding: 0;
+          margin: 0 auto;
+          display: table;
+          width: auto;
+        }
+      }
+    }
+    
+    .hero {
+      padding: 0;
+      margin: 50px 0 0;
+      background: none;
+      border-bottom-width: $borderSize * 2.5;
+
+      .video {
+        width: 100%;
+      }
+    }
+
+    .biglist {
+      li {
+        h3, p {
+          border-left-width: $borderSize * 2.5;
+        }
+      }
+    }
+
+  }
+}
