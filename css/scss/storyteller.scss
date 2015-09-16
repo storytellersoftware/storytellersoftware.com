@@ -459,7 +459,7 @@ only screen and (                min-resolution: 2dppx)   {
     .flyleft { margin-left: 0; }
     .flyright { margin-right: 0; }
 
-    body { font-size: 1.75 * $fontsize;}
+    //body { font-size: 1.75 * $fontsize;}
 
     .left, .right {float: none; padding: 0px;}
     .large, .small, .half {width: 100%;}
